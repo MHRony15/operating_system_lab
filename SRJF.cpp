@@ -2,21 +2,9 @@
 
 using namespace std;
 
-int main()
-{
-    int n,duration[20],wait[20],tat[20],avwt=0,total_wait=0,i,j,p[20];
+int n,duration[20],wait[20],tat[20],avwt=0,total_wait=0,i,j,p[20];
 
-    cout<<"Enter total number of processes:";
-    cin>>n;
-
-    cout<<"\nEnter Process Burst Time\n";
-    for(i=0;i<n;i++)
-    {
-        cout<<"P["<<i+1<<"]:";
-        cin>>duration[i];
-        p[i]=i+1;
-
-    }
+void proc_sort(int arr[]){
     for(i=0;i<n;i++){
         for(int j= 0;j<n;j++){
             if(duration[j]>duration[i]){
@@ -31,8 +19,29 @@ int main()
             }
         }
     }
-    wait[0]=0;
+
+
+ }
+
+int main()
+{
+
+
+    cout<<"Enter total number of processes:";
+    cin>>n;
+
+    cout<<"\nEnter Process Burst Time\n";
+    for(i=0;i<n;i++)
+    {
+        cout<<"P["<<i+1<<"]:";
+        cin>>duration[i];
+        p[i]=i+1;
+
+    }
+    proc_sort(duration);
+
     cout<<"\nProcess\t\tBurst Time\tWaiting Time\tTurnround time";
+    wait[0]=0;
     for(i=0;i<n;i++){
 
             wait[i+1]=wait[i]+duration[i];

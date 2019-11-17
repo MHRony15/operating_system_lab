@@ -17,14 +17,14 @@ int main()
     }
 
     wait[0]=0;
-    cout<<"\nProcess\t\tBurst Time\tWaiting Time";
+    cout<<"\nProcess\t\tBurst Time\tWaiting Time\tTurnround time";
     for(i=0;i<n;i++){
-        wait[i]=0;
-        for(j=0;j<i;j++){
-            wait[i]=wait[i]+duration[j];
-        }
+
+            wait[i+1]=wait[i]+duration[i];
+            tat[i]=wait[i]+duration[i];
+
         total_wait=total_wait+wait[i];
-        cout<<"\nP["<<i+1<<"]"<<"\t\t"<<duration[i]<<"\t\t"<<wait[i];
+        cout<<"\nP["<<i+1<<"]"<<"\t\t"<<duration[i]<<"\t\t"<<wait[i]<<"\t\t"<<tat[i];
     }
             avwt=total_wait/n;
 
