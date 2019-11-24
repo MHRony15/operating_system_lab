@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-    int n,duration[20],wait[20],tat[20],avwt=0,total_wait=0,i,j;
+    int n,duration[20],wait[20],ct[20],avwt=0,total_wait=0,i,j;
 
     cout<<"Enter total number of processes:";
     cin>>n;
@@ -17,14 +17,14 @@ int main()
     }
 
     wait[0]=0;
-    cout<<"\nProcess\t\tBurst Time\tWaiting Time\tTurnround time";
+    cout<<"\nProcess\t\tBurst Time\tWaiting Time\tCompletion Time";
     for(i=0;i<n;i++){
 
             wait[i+1]=wait[i]+duration[i];
-            tat[i]=wait[i]+duration[i];
+            ct[i]=wait[i]+duration[i];
 
         total_wait=total_wait+wait[i];
-        cout<<"\nP["<<i+1<<"]"<<"\t\t"<<duration[i]<<"\t\t"<<wait[i]<<"\t\t"<<tat[i];
+        cout<<"\nP["<<i+1<<"]"<<"\t\t"<<duration[i]<<"\t\t"<<wait[i]<<"\t\t"<<ct[i];
     }
             avwt=total_wait/n;
 

@@ -27,10 +27,10 @@ int main()
 {
 
 
-    cout<<"Enter total number of processes:";
+    cout<<"Enter total number of processes :";
     cin>>n;
 
-    cout<<"\nEnter Process Burst Time\n";
+    cout<<"\nEnter Process Burst Time and \n";
     for(i=0;i<n;i++)
     {
         cout<<"P["<<i+1<<"]:";

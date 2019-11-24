@@ -8,6 +8,7 @@ int main()
 
     cout<<"Enter total number of processes:";
     cin>>n;
+    cout<<"\nEnter the time quantum:";
 
     cout<<"\nEnter Process Burst Time\n";
     for(i=0;i<n;i++)
@@ -45,4 +46,5 @@ int main()
     cout<<"\n\nAverage Waiting Time:"<<avwt;
     return 0;
 }
+
 

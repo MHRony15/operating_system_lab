@@ -4,23 +4,29 @@ using namespace std;
 
 int main()
 {
-    int n,duration[20],wait[20],ct[20],avwt=0,total_wait=0,i,j,p[20];
+    int n,duration[20],wait[20],ct[20],avwt=0,total_wait=0,i,j,p[20],priority[20], temp;;
 
     cout<<"Enter total number of processes:";
     cin>>n;
 
-    cout<<"\nEnter Process Burst Time\n";
+    cout<<"\nEnter Process Burst Time and priority\n";
     for(i=0;i<n;i++)
     {
-        cout<<"P["<<i+1<<"]:";
+        cout<<"Burst time of P["<<i+1<<"]:";
         cin>>duration[i];
+        cout<<"Priority  of P["<<i+1<<"]:";
+        cin>>priority[i];
         p[i]=i+1;
 
     }
     for(i=0;i<n;i++){
-        for(int j= 0;j<n;j++){
-            if(duration[j]>duration[i]){
-                int temp;
+        for(int j= i+1;j<n;j++){
+            if(priority[j]<priority[i]){
+
+                temp=priority[i];
+                priority[i]=priority[j];
+                priority[j]=temp;
+
                 temp=duration[i];
                 duration[i]=duration[j];
                 duration[j]=temp;
@@ -45,4 +51,5 @@ int main()
     cout<<"\n\nAverage Waiting Time:"<<avwt;
     return 0;
 }
+
 
