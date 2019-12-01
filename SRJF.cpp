@@ -1,13 +1,14 @@
 #include<bits/stdc++.h>
+#include<queue>
 
 using namespace std;
-
-int n,duration[20],wait[20],tat[20],avwt=0,total_wait=0,i,j,p[20];
+queue < int > myq;
+int n,duration[20],AT[20],wait[20],tat[20],avwt=0,total_wait=0,i,j,p[20];
 
 void proc_sort(int arr[]){
-    for(i=0;i<n;i++){
-        for(int j= 0;j<n;j++){
-            if(duration[j]>duration[i]){
+    for(i=1;i<=n;i++){
+        for(int j= i;j<=n;j++){
+            if(duration[j]<duration[i]){
                 int temp;
                 temp=duration[i];
                 duration[i]=duration[j];
@@ -30,17 +31,35 @@ int main()
     cout<<"Enter total number of processes :";
     cin>>n;
 
-    cout<<"\nEnter Process Burst Time and \n";
-    for(i=0;i<n;i++)
+    cout<<"\nEnter Process Burst Time and Arrival Time \n";
+    for(i=1;i<=n;i++)
     {
-        cout<<"P["<<i+1<<"]:";
+        cout<<"P["<<i<<"]:";
+        cout<<"\nBurst Time :";
         cin>>duration[i];
-        p[i]=i+1;
+        cout<<"Arrival Time :";
+        cin>>AT[i];
+        p[i]=i;
 
     }
-    proc_sort(duration);
 
-    cout<<"\nProcess\t\tBurst Time\tWaiting Time\tTurnround time";
+    cout<<"Gantt Chart : ";
+
+    proc_sort(AT);
+    for(i=1;i<=n;i++){
+        for(j=i;j<=n;j++){}
+        if(AT[P[i]]==AT[P[j]]){
+            myq.push(P[i])
+        }
+    }
+
+//    proc_sort(duration);
+//    for(i=1;i<=n;i++){
+//        cout<<"P"<<p[i]<<" | ";
+//    }
+
+
+    /*cout<<"\nProcess\t\tBurst Time\tWaiting Time\tTurnround time";
     wait[0]=0;
     for(i=0;i<n;i++){
 
@@ -51,7 +70,7 @@ int main()
     }
             avwt=total_wait/n;
 
-    cout<<"\n\nAverage Waiting Time:"<<avwt;
+    cout<<"\n\nAverage Waiting Time:"<<avwt;*/
     return 0;
 }
 
