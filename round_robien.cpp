@@ -18,7 +18,7 @@ int main(){
         temp[i]=BT[i];
         myq.push(i);
     }
-    cout<<"Gantt Chart :"
+    cout<<"Gantt Chart :";
     while(!myq.empty()){
         i=myq.front();
          if(temp[i]>time_quantum){
