@@ -3,7 +3,7 @@
 using namespace std;
 int main(){
     queue <int>myq;
-    int n,i,j,time=-1,time_quantum;
+    int n,i,j,time=0,time_quantum;
     int BT[20],temp[20],WT[20],TT[20],avwt=0,total_wait=0;
 
     cout<<"Enter total number of processes: ";
