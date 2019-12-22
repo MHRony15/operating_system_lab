@@ -20,7 +20,7 @@ bool compare2(Schedule a,Schedule b)
 
 int main()
 {
-	Schedule pro[10];
+	Schedule pro[10];our local changes to the following files would be overwritten by merge:
 	int n,i,j,pcom;
 	//n = number of processes, i= iteration variable,pcom=number of complete program
 
@@ -76,7 +76,7 @@ int main()
 			pro[j].bt--;
 		}
 		ctime++;
-		pcom=0;
+		pcom=0;our local changes to the following files would be overwritten by merge:
 		for(j=0;j<n;j++)
 		{
 			if(pro[j].bt==0)
