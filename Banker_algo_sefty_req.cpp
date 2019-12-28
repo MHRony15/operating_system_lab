@@ -4,6 +4,7 @@ using namespace std;
 void safety_algo(int n,int m ,int allocation[MaxIn][MaxIn],int Need[MaxIn][MaxIn],int Avilable[MaxIn]);
 
 int main(){
+
     int n,m;
     int allocation[MaxIn][MaxIn],Max[MaxIn][MaxIn], Avilable[MaxIn],Instances[MaxIn],Need[MaxIn][MaxIn];
 
@@ -36,7 +37,9 @@ int main(){
             Need[i][j]=Max[i][j]-allocation[i][j];
         }
     }
+
     safety_algo(n,m,allocation,Need,Avilable);
+
 
 
 return 0;
